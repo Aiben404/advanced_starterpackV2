@@ -4,6 +4,11 @@ A New Citizen starter pack for ESX. New players walk up to an NPC and claim a
 one-time reward: cash, bank money, items, and a personal vehicle. Everything is
 tracked per character in the database, so each claim can only be made once.
 
+## Preview
+
+![Preview 1](https://r2.fivemanage.com/fDUKi7rgEhC1caoH2Yksm/imag11.png)
+![Preview 2](https://r2.fivemanage.com/fDUKi7rgEhC1caoH2Yksm/imag22.png)
+
 ## Features
 
 - One-time claim per character (money, bank, items, vehicle)
