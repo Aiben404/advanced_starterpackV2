@@ -1,0 +1,241 @@
+/* ============================================================
+   Minimal starter pack UI
+   Clean lines, hairline dividers, restrained monochrome palette.
+   ============================================================ */
+:root {
+    --bg:        #0e0e10;
+    --surface:   #141417;
+    --surface-2: #17171b;
+
+    --line:      rgba(255, 255, 255, 0.07);
+    --line-2:    rgba(255, 255, 255, 0.12);
+
+    --text:      #f4f4f5;
+    --text-dim:  #a1a1a6;
+    --text-faint:#6c6c72;
+
+    --accent:    #f4f4f5;   /* primary button fill (near-white) */
+    --accent-ink:#111113;   /* text on the primary button */
+    --pos:       #7dd3a8;   /* subtle positive tone for money */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+.hidden { display: none !important; }
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------------- Panel ---------------- */
+.panel {
+    width: 430px;
+    max-height: 92vh;
+    overflow-y: auto;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 26px 24px;
+    animation: rise 0.18s ease-out;
+}
+.panel::-webkit-scrollbar { width: 0; }
+
+@keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------- Header ---------------- */
+.header { margin-bottom: 22px; }
+.header h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.2px;
+}
+.header p {
+    margin-top: 7px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-dim);
+    line-height: 1.5;
+    max-width: 90%;
+}
+
+/* ---------------- Sections & dividers ---------------- */
+.section { }
+.divider {
+    height: 1px;
+    background: var(--line);
+    margin: 22px 0;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.section-meta { display: flex; flex-direction: column; gap: 6px; }
+
+.eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+}
+.section-note {
+    font-size: 12.5px;
+    color: var(--text-dim);
+}
+
+/* ---------------- Buttons ---------------- */
+.btn {
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 12.5px;
+    font-weight: 550;
+    letter-spacing: 0.1px;
+    padding: 9px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+    background: var(--accent);
+    color: var(--accent-ink);
+    transition: background 0.15s ease, opacity 0.15s ease, transform 0.08s ease;
+}
+.btn:hover { background: #ffffff; }
+.btn:active { transform: translateY(1px); }
+.btn.claimed {
+    background: transparent;
+    color: var(--text-faint);
+    border-color: var(--line-2);
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* ---------------- Rewards grid ---------------- */
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+.tile {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 15px 8px 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+.tile:hover { background: var(--surface-2); border-color: var(--line-2); }
+
+.tile-count {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    font-size: 10.5px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.2px;
+}
+.tile-count.qty  { color: var(--text-dim); }
+.tile-count.cash { color: var(--pos); }
+
+.tile-icon {
+    font-size: 26px;
+    line-height: 1;
+    margin: 8px 0 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+}
+.tile-img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    display: block;
+}
+.tile-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+/* ---------------- Vehicle ---------------- */
+.vehicle-card { position: relative; }
+.vehicle-badge { display: block; margin-bottom: 12px; }
+
+.vehicle-image {
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vehicle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* Neutral placeholder shown only when no image is set / it fails to load */
+.vehicle-art {
+    width: 100%;
+    height: 100%;
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            transparent 0 10px,
+            rgba(255, 255, 255, 0.02) 10px 20px
+        ),
+        var(--surface-2);
+}
+
+.vehicle-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+.vehicle-text h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.1px;
+}
+.vehicle-text p {
+    margin-top: 4px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+}

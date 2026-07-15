@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starter Pack</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="wrapper" class="hidden">
+        <div class="panel">
+            <!-- Header -->
+            <header class="header">
+                <h1 id="title">New Citizen Package</h1>
+                <p id="subtitle">Welcome to the city. Claim your starter rewards and begin your journey.</p>
+            </header>
+
+            <!-- Starter Package -->
+            <section class="section">
+                <div class="section-head">
+                    <div class="section-meta">
+                        <span class="eyebrow" id="package-badge">Starter Package</span>
+                        <span class="section-note" id="rewards-count">7 rewards ready to claim</span>
+                    </div>
+                    <button class="btn" id="collect-btn">Collect Package</button>
+                </div>
+                <div class="rewards-grid" id="rewards-grid"></div>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Starter Vehicle -->
+            <section class="section vehicle-card" id="vehicle-card">
+                <span class="eyebrow vehicle-badge" id="vehicle-badge">Starter Vehicle</span>
+
+                <div class="vehicle-image">
+                    <img id="vehicle-img" class="vehicle-img hidden" alt="" />
+                    <div class="vehicle-art" id="vehicle-art"></div>
+                </div>
+
+                <div class="vehicle-info">
+                    <div class="vehicle-text">
+                        <h2 id="vehicle-name">SERVER CITY CAR</h2>
+                        <p id="vehicle-sub">Super Class · 2 seats</p>
+                    </div>
+                    <button class="btn" id="claim-vehicle-btn">Claim Vehicle</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
