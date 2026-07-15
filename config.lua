@@ -80,7 +80,7 @@ Config.Vehicle = {
     --   2) Set the path below relative to the web folder (e.g. 'img/vehicle.png'),
     --      OR use a full https URL (e.g. 'https://i.imgur.com/xxxx.png').
     --   Leave it empty ('') to fall back to the built-in stylised silhouette.
-    image = 'https://r2.fivemanage.com/fDUKi7rgEhC1caoH2Yksm/car.png',
+    image = 'https://i.imgur.com/xxxx.png',
 
     -- Save the vehicle to the ESX `owned_vehicles` garage table so it persists.
     giveToGarage = true,
